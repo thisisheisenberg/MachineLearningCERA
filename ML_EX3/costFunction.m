@@ -33,21 +33,21 @@ end;
 J = -((1/m)*ans);
 
 
-for j = 1:size(theta),
+for j = 1:size(theta)(1),
 
 	temp_grad = 0;
 
 	for i = 1:m,
 
-		temp_grad = temp_grad + (sigmoid(theta' * X(i,:)') - y(i)) * X(i,j);
+		temp_grad = temp_grad + ((sigmoid(theta' * X(i,:)') - y(i)) * X(i,j));
 	
 	end;
+
+	temp_grad = (1/m)*temp_grad;
 	
-	grad(i) = temp_grad;
+	grad(j) = temp_grad;
 
 end;
-
-grad
 
 
 % =============================================================
